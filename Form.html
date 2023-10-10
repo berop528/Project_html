@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มขออนุมัติ การเดินทาง</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS.css">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <form id="myForm" class="p-2 border border-light rounded bg-light" onsubmit="handleFormSubmit(this)">
+            <p class="h4 mb-4 text-center">ขออนุมัติเดินทางไปปฏิบัติงาน</p>
+            <div id="message"></div>
+            <input type="text" id="RecId" name="RecId" value="" style="display: none">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p>ส่วนงาน โครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง โทร 8862</p>
+                    <p>เรื่อง ขออนุมัติเดินทางไปปฏิบัติงาน</p>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-md-6">
+              <div class="row">
+                  <div class="col">
+                      <label class="col" for="name">เรียน</label>
+                  </div>
+                  <div class="col">
+                      <select class="form-select" style="width:100%;" aria-label="Default select example">
+                          <option selected>เลือกผู้ที่จะส่งถึง</option>
+                          <option value="1">อธิการ</option>
+                          <option value="2">รองอธิการ</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+
+            <div class="form-group">
+                <label for="re">ด้วยข้าพเจ้าต้องเดินทางไปปฏิบัติงานที่</label>
+                <input class="form-control" type="text" placeholder="Default input" aria-label="re">
+            </div>
+
+            <div class="form-group">
+                <label for="re">พร้อมด้วย</label>
+                <input class="form-control" type="text" placeholder="Default input" aria-label="re">
+            </div>
+
+            <div class="form-group">
+                <label for="re">เพื่อ</label>
+                <input class="form-control" type="text" placeholder="Default input" aria-label="re">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="startDate">จึงขออนุมัติไปปฏิบัติงาน ตั้งแต่วันที่</label>
+                      <input type="date" class="form-control" id="startDate" name="startDate">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="endDate">ถึงวันที่</label>
+                      <input type="date" class="form-control" id="endDate" name="endDate">
+                  </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="re">ในระหว่างการเดินทางไปปฏิบัติหน้าที่ ข้าพเจ้าพักที่</label>
+                <input class="form-control" type="text" placeholder="Default input" aria-label="re">
+            </div>
+
+            <div class="form-group">
+                <label for="re">หมายเลขโทรศัพท์ที่ติดต่อได้</label>
+                <input type="number" class="form-control" placeholder="Default input" aria-label="re">
+            </div>
+
+            <p>ในการเดินทางไปปฏิบัติงานครั้งนี้ ข้าพเจ้าประมาณการใช้จ่ายในการเดินทางไปปฏิบัติงาน ดังนี้</p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="dailyAllowance">1. ค่าเบี้ยเลี้ยง</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">วันละ</label>
+                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="dailyAllowance">
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">จำนวนวัน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                            <span class="text-muted">วัน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfPeople">จำนวนคน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                            <span class="text-muted">คน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="totalAmount">เป็นเงิน</label>
+                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="totalAmount" readonly>
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ส่วนประข้อ 2  -->
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="dailyAllowance">2. ค่าเช่าที่พัก</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="้select_home" id="gender" value="ประเภทก">
+                                <label class="form-check-label" for="้select_home">ประเภท ก. วันละ</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">วันละ</label>
+                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="dailyAllowance">
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">จำนวนวัน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                            <span class="text-muted">วัน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfPeople">จำนวนคน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                            <span class="text-muted">คน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="totalAmount">เป็นเงิน</label>
+                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="totalAmount" readonly>
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="้select_home" id="gender" value="ประเภทก">
+                                <label class="form-check-label" for="้select_home">แบบเหมาจ่าย</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">วันละ</label>
+                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="dailyAllowance" value="600" readonly>
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfDays">จำนวนวัน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                            <span class="text-muted">วัน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="numberOfPeople">จำนวนคน</label>
+                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                            <span class="text-muted">คน</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="totalAmount">เป็นเงิน</label>
+                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="totalAmount" readonly>
+                            <span class="text-muted">บาท</span>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">3. ค่าพาหนะเดินทาง</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-check-input" type="radio" name="้select_home" id="gender" value="ประเภทก">
+                            <label class="form-check-label" for="้select_home">ค่ารถไฟ, รถทัวร์, รถตู้</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="numberOfDays">จำนวนคน</label>
+                            <input class="form-control text-left" type="number" placeholder="กี่คน" id="dailyAllowance">
+                            <span class="text-muted">คน</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-md-auto">     
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="select_car" id="male" value="ประเภทก">
+                            <label class="form-check-label" for="select_car">ค่ารถไฟ, รถทัวร์, รถตู้</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-auto">
+                        <div class="form-group">
+                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">วัน</div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">
+                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">คน</div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">เป็นเงิน</div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">
+                            <label for="">โชเงิน</label>
+                        </div>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-group">บาท</div>
+                    </div>
+                </div>
+                <!-- ตัวเลือกค่าเครื่องบิน -->
+                  <div class="row pt-4">
+                      <div class="col-lg-auto">
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="select_car" id="male" value="ประเภทก">
+                              <label class="form-check-label" for="select_car">ค่าเครื่องบิน</label>
+                          </div>
+                      </div>
+                      <div class="col-lg-auto">
+                          <div class="form-group">
+                              <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                          </div>
+                      </div>
+                      <div class="col-lg-auto">
+                          <div class="form-group">วัน</div>
+                      </div>
+                      <div class="col-lg-auto">
+                          <div class="form-group">
+                              <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                          </div>
+                      </div>
+                      <div class="col-lg-auto">
+                        <div class="form-group">คน</div>
+                      </div>
+                      <div class="col-lg-auto">
+                        <div class="form-group">เป็นเงิน</div>
+                      </div>
+                      <div class="col-lg-auto">
+                        <div class="form-group">
+                          <label for="">โชเงิน</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-auto">
+                        <div class="form-group">บาท</div>
+                      </div>
+                    </div>
+
+
+                <!-- ตัวเลือกนำรถไปเอง -->
+                <div class="row pt-4">
+                    <div class="col-lg-auto">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="select_car" id="male" value="ประเภทก">
+                            <label class="form-check-label" for="select_car">ชดเชยนำมันรถยนต์ส่วนตัว</label>
+                        </div>
+                   </div>
+                   <div class="col-lg-auto">
+                    <div class="form-group">
+                        <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="dailyAllowance" >
+                    </div>
+                </div>
+                <div class="col-lg-auto">
+                    <div class="form-group">กิโลเมตร</div>
+                </div>
+                    <div class="col-lg-auto">
+                        <div class="form-group">
+                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <div class="form-group">บาท</div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <div class="form-group">
+                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                      <div class="form-group">เที่ยว</div>
+                    </div>
+                    <div class="col-lg-auto">
+                      <div class="form-group">เป็นเงิน</div>
+                    </div>
+                    <div class="col-lg-auto">
+                      <div class="form-group">
+                        <label for="">โชเงิน</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                    </div>
+                  </div>
+            </div>
+
+            <!-- ตัวเลือก 4  -->
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <label for="dailyAllowance">4. ค่ารถรับจ้างและค่ารถประจำทาง</label>
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="numberOfDays">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">วัน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfPeople">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">คน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">เป็นเงิน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">
+                      <label for="">โชเงิน</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>         
+                </div>
+            </div>
+
+            <!-- ค่าลงทะเบียน -->
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <label for="dailyAllowance">5. ค่าลงทะเบียน</label>
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfDays">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">คน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="ที่ต้องจ่าย" id="numberOfPeople">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">เป็นเงิน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">
+                      <label for="">โชเงิน</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>         
+                </div>
+            </div>
+
+            <!-- 6.น้ำมันเชื้อเพลิง -->
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <label for="dailyAllowance">6. ค่าน้ำมันเชื้อเพลิง</label>
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfDays">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">คน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="ที่ต้องจ่าย" id="numberOfPeople">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">เป็นเงิน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">
+                      <label for="">โชเงิน</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>         
+                </div>
+            </div>
+
+            <!-- 7.เงินช่วยเหลือพนักงานขับรถ -->
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <label for="dailyAllowance">7. เงินช่วยเหลือพนักงานขับรถ</label>
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="numberOfDays">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">คน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">
+                          <input class="form-control text-left" type="number" placeholder="ที่ต้องจ่าย" id="numberOfPeople">
+                      </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">เป็นเงิน</div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="form-group">
+                      <label for="">โชเงิน</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                      <div class="form-group">บาท</div>
+                  </div>         
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-auto">
+                        <div class="form-group">
+                            <label for="dailyAllowance">8. อื่น ๆ </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <div class="form-groups">
+                            <input class="form-control text-left" type="text" placeholder="เพิ่มตัวเลือกในช่องนี้" id="input-0">
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <div class="form-group">เป็นเงิน</div>
+                      </div>
+                      <div class="col-lg-auto">
+                        <div class="form-group">
+                          <label for="">โชเงิน</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-auto">
+                          <div class="form-group">บาท</div>
+                      </div>         
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+            <input class="btn btn-secondary" type="reset" value="รีเซ็ต">
+            
+        </form>
+    </div>
+    <script src="Function_eight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

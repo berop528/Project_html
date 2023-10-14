@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใบเบิกค่าใช้จ่ายในการเดินทางไปปฎิบัติงาน </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS.css">
+    
+</head>
+<body>
+    <div class="container">
+        <form id="myForm" class="p-2 border border-light rounded bg-light" onsubmit="handleFormSubmit(this)">
+            <h4 class="h4 mb-4 text-center">ใบเบิกค่าใช้จ่ายในการเดินทางไปปฎิบัติงาน</h4>
+            <div id="message"></div>
+            <input type="text" id="RecId" name="RecId" value="" style="display: none">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p>ส่วนงาน โครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง โทร 8862</p>
+                    <p>เรื่อง ขออนุมัติเบิกค่าใช้จ่ายในการเดินทางไปปฎิบัติงาน</p>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-md-6">
+                
+              <div class="row mb-3">
+                <div class="col-auto">
+                    <label for="inlineSelect" class="col-form-label">เรียน</label>
+                </div>
+                  <div class="col">
+                    
+                    <select class="form-select form-inline" aria-label="Default select example">
+                          <option selected>เลือกผู้ที่จะส่งถึง</option>
+                          <option value="1">รองอธิการบดีวิทยาเขตสุราษฎร์ธานี</option>
+                          <option value="2">ผู้อำนวยการโครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          
+          
+           <div class="row mb-4">
+            <div class="col-md-4">
+                <label for="name" class="form-label">ข้าพเจ้า</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="col-md-4">
+                <label for="position" class="form-label">ตำแหน่ง</label>
+                <select class="form-select form-inline" aria-label="Default select example">
+                    <option selected>ตำแหน่ง</option>
+                    <option value="1">ศาสตราจารย์</option>
+                    <option value="2">รองศาสตราจารย์</option>
+                    <option value="3">อาจารย์</option>
+                    <option value="4">อาจารย์</option>
+                    <option value="5">นักวิชาการอุดมศึกษา</option>
+                    <option value="6">นักวิชาการศึกษา</option>
+                    <option value="7">นักวิชาการเกษตร</option>
+                    <option value="8">นักวิชาการพัสดุ</option>
+                    <option value="9">เจ้าหน้าที่บริหารงานทั่วไป</option>
+                    <option value="10">นักวิชาการเกษตร</option>
+                </select> 
+            </div>
+            <div class="col-md-4 align-self-end">
+                <label class="form-label">สังกัด โครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง</label>
+            </div>
+            
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4 border-end  border-3 ">
+                  <div class="form-group mb-3">
+                      <label class="form-label" for="startDate">พร้อมด้วย</label>
+                      <input type="text" class="form-control" id="startDate" name="startDate">
+                  </div>
+                  <div>
+                    <label class="form-label" for="toLocation">เดินทางไปปฎิบัติงานที่</label>
+                    <textarea class="form-control" id="toLocation" name="toLocation" rows="2"></textarea>
+                   </div>
+              </div>
+              <div class="col-md-4 border-end  border-3 ">
+                <div class="form-group">
+                    <label class="form-label" for="startDate">โดยออกเดินทางจาก</label>
+                    
+                    <div class="form-check py-1">
+                        <input class="form-check-input" type="radio" name="startpoint" id="startpoint_home" >
+                        <label class="form-check-label" for="startpoint_home">
+                          บ้านพัก
+                        </label>
+                    </div>
+                    <div class="form-check py-1">
+                        <input class="form-check-input" type="radio" name="startpoint" id="startpoint_office" >
+                        <label class="form-check-label" for="startpoint_office">
+                          สำนักงาน
+                        </label>
+                    </div>
+                    <div class="form-check py-1">
+                        <input class="form-check-input" type="radio" name="startpoint" id="startpoint_thai" >
+                        <label class="form-check-label" for="startpoint_thai">
+                          ประเทศไทย
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="startpoint_date">ตั้งแต่วันที่</label>
+                        <input type="datetime-local" class="form-control" id="startpoint_date" name="startpoint_date">
+                    </div>
+                </div>
+                <div>
+                  
+                </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="form-group">
+                        <label class="form-label" for="startDate">และกลับถึง</label>
+                        
+                        <div class="form-check py-1">
+                            <input class="form-check-input" type="radio" name="endpoint" id="endpoint_home" >
+                            <label class="form-check-label" for="endpoint_home">
+                              บ้านพัก
+                            </label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input class="form-check-input" type="radio" name="endpoint" id="endpoint_office" >
+                            <label class="form-check-label" for="endpoint_office">
+                              สำนักงาน
+                            </label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input class="form-check-input" type="radio" name="endpoint" id="endpoint_thai" >
+                            <label class="form-check-label" for="endpoint_thai">
+                              ประเทศไทย
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="endpoint_date">ตั้งแต่วันที่</label>
+                            <input type="datetime-local" class="form-control" id="endpoint_date" name="endpoint_date">
+                        </div>
+                    </div>
+                    <div>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-end mb-3"> 
+                <div class="row col-8 px-0" >
+                <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label">รวมเวลาไปปฎิบัติงานครั้งนี้</label>
+                    </div>
+                    <div class="col-2">
+                        <input class="form-control" type="text"  id="daysResult" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label" for="daysResult">วัน</label>
+                
+                    </div>
+                    <div class="col-2">
+                        <input class="form-control" type="text" id="hoursResult" disabled>
+                    </div>
+                    <div class="col-auto align-items-center" >
+                    <label class="form-label col-form-label" for="hoursResult">ชั่วโมง</label>
+                    </div>  
+                    <div class="col-2">
+                        <input class="form-control" type="text" id="minutesResult" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label" for="minutesResult" >นาที</label>
+                    </div> 
+                </div>
+            </div>
+            <div class="row justify-content-end" style="margin-right: 40px;"> 
+                <div class="row col-4  justify-content-end me-5" >
+                    <div class="col-auto ">
+                    <label class="form-label col-form-label">คิดเป็น</label>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" type="text"  id="total_daysResult" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label" for="total_daysResult">วัน</label>
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <label class="col-form-label col-auto pt-0">ข้าพเจ้าขอเบิกเงินค่าใช้จ่ายในการเดินทางไปปฎิบัติสำหรับ</label>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        ข้าพเจ้า
+                      </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        คณะเดินทาง
+                      </label>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="allowanceList" class="form-label">ค่าที่เบี้ยเลี้ยงเดินทางประเภท</label>
+                    <select class="form-select form-inline" id="allowanceList">
+                        <option selected>ประเภทค่าเบี้้ยเลี้ยง</option>
+                        <option value="1">ประกาศ ม.</option>
+                        <option value="2">กระทรวงการคลัง</option>
+                    </select> 
+                </div>
+                <div class="col-auto ">
+                    
+                    <label for="allowance_date" class="form-label">จำนวนวัน</label>
+                    <input type="text" class="form-control" id="allowance_date" name="total_date" disabled> 
+                </div>
+                <div class="col-4 row align-self-end ms-auto">
+                    <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label" for="allowanceBaht">รวม</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="text"  id="allowanceBaht" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label">บาท</label>
+                
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="rentList" class="form-label">ค่าที่เช่าที่พักประเภท</label>
+                    <select class="form-select form-inline" id="rentList">
+                        <option selected>ประเภทค่าเช่าที่พัก</option>
+                        <option value="1">ประเภท ก</option>
+                        <option value="2">ประเภท เหมาจ่าย</option>
+                    </select> 
+                </div>
+                <div class="col-auto ">
+                    
+                    <label for="rent_date" class="form-label">จำนวนคืน</label>
+                    <input type="text" class="form-control" id="rent_date" name="date" disabled> 
+                </div>
+                <div class="col-4 row align-self-end ms-auto">
+                    <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label" for="rentBaht">รวม</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="text"  id="rentBaht" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label">บาท</label>
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="vehicle" class="form-label">ค่าพาหนะ</label>
+                    <div class="row">
+                        <div class="col-4 flex-fill">
+                            <input type="text" class="form-control" id="vehicle" name="vehicle">
+                        </div>
+                        <div class="col-auto">
+                            <label class="form-label col-form-label">บาท</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 row align-self-end ms-auto">
+                    <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label" for="vehicleBaht">รวม</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="text" id="vehicleBaht" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label">บาท</label>
+                
+                    </div>
+                </div>
+                
+            
+            </div>
+
+            <div id="container" class="row mb-3 otherInput">
+                <div class="col-4">
+                    <label for="other" class="form-label">อื่น</label> 
+                    <button id="createInputsButton">Click me</button>
+                    <!-- <button id="createInputsButton2">Click you</button> -->
+
+                    <div class="row " >
+                        <div class="col-4 flex-fill">
+                           
+                            <div id="otherInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 row align-items-end mb-3">
+                    <div class="col align-items-end">
+                        
+                        <div id="otherInputBaht">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div  class="row justify-content-center">
+                <div class="col-4 row ">
+                    <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label" for="otherTotal">รวม</label>
+                    </div>
+                    <div class="col-6 flex-fill ">
+                        <input class="form-control" type="text"  id="otherTotal">
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label">บาท</label>
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-end mb-3"> 
+                <div class="col-4 align-self-center ">
+                    <p id="thaibaht" class="m-0">จำนวนเงิน (ตัวอักษร) (.......................................) </p>
+                </div>
+                <div class="col-4 row align-self-end ">
+                    <div class="col-auto" style="
+                    padding-left: 0px;
+                    padding-right: 0px;
+                ">
+                    <label class="form-label col-form-label" for="total_Price">รวมเงินทั้งสิ้น</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="text"  id="total_Price" disabled>
+                    </div>
+                    <div class="col-auto align-items-center">
+                    <label class="form-label col-form-label">บาท</label>
+                
+                    </div>
+                </div>
+            </div>
+            <p>ข้าพเจ้ารับรองว่าารายการที่กล่าวมาข้างต้นเป็นความจริง รวมทั้งจำนวนเงินที่ขอเบิกถูกต้องตามกฎหมายทุกประการ</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name2" class="form-label">ข้าพเจ้า</label>
+                    <input type="text" class="form-control" id="name2">
+                </div>
+                <div class="col-md-4">
+                    <label for="position" class="form-label">ตำแหน่ง</label>
+                    <select class="form-select form-inline" aria-label="Default select example">
+                        <option selected>ตำแหน่ง</option>
+                        <option value="1">ศาสตราจารย์</option>
+                        <option value="2">รองศาสตราจารย์</option>
+                        <option value="3">อาจารย์</option>
+                        <option value="4">อาจารย์</option>
+                        <option value="5">นักวิชาการอุดมศึกษา</option>
+                        <option value="6">นักวิชาการศึกษา</option>
+                        <option value="7">นักวิชาการเกษตร</option>
+                        <option value="8">นักวิชาการพัสดุ</option>
+                        <option value="9">เจ้าหน้าที่บริหารงานทั่วไป</option>
+                        <option value="10">นักวิชาการเกษตร</option>
+                    </select> 
+                </div>
+                <div class="col-md-4 align-self-end" >
+                    <label class="form-label">ผู้ขอรับเงิน</label>
+                </div>
+            
+            
+            
+            
+            
+
+            
+
+           
+
+            
+            
+        </form>
+    </div>
+    <script src="script_Form2.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

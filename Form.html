@@ -8,92 +8,92 @@
     <link rel="stylesheet" type="text/css" href="CSS.css">
 
 </head>
-<body>
-    <div class="container">
-        <form id="myForm" class="p-2 border border-light rounded bg-light" onsubmit="return validation_Sendto() && validateFormNumber_Phone() &&   handleFormSubmit(this) ">
-            <p class="h4 mb-4 text-center">ขออนุมัติเดินทางไปปฏิบัติงาน</p>
+<body class="bg-gray">
+    <div class="container container-width ">
+        <form id="myForm" class="border border-light rounded  p-5" onsubmit="return validation_Sendto() && validateFormNumber_Phone() &&   handleFormSubmit(this) ">
             <div id="message"></div>
             <input type="text" id="RecId" name="RecId" value="" style="display: none">
+                <h1>ขออนุมัติเดินทางไปปฏิบัติงาน</h1>
+                <div class="bg-light shadow py-3 px-5 mb-3">
+                    
 
-            <div class="row">
-                <div class="col-md-6">
-                    <p>ส่วนงาน โครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง โทร 8862</p>
-                    <p>เรื่อง ขออนุมัติเดินทางไปปฏิบัติงาน</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                    <div class="col-md-2">
-                        <label class="col" for="name">เรียน</label>
+                    <div class="row mb-3">
+                        <div class="col-auto align-self-center">
+                            <label class="col" for="name">เรียน</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <select class="form-select" style="width:100%;" aria-label="Choose_who_to" name="send_to" id="send_to">
+                                <option value=''>กรุณาเลือกผู้ที่จะเรียนถึง</option>
+                                <option value="รองอธิการบดีวิทยาเขตสุราษฎร์ธานี">รองอธิการบดีวิทยาเขตสุราษฎร์ธานี</option>
+                                <option value="ผู้อำนวยการโครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง">ผู้อำนวยการโครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง</option>
+                            </select>
+                        </div>
                     </div>
-                  <div class="col">
-                        <select class="form-select" style="width:100%;" aria-label="Choose_who_to" name="send_to" id="send_to">
-                            <option value=''>กรุณาเลือกผู้ที่จะเรียนถึง</option>
-                            <option value="รองอธิการบดีวิทยาเขตสุราษฎร์ธานี">รองอธิการบดีวิทยาเขตสุราษฎร์ธานี</option>
-                            <option value="ผู้อำนวยการโครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง">ผู้อำนวยการโครงการจัดตั้งคณะนวัตกรรมการเกษตรและประมง</option>
-                        </select>
-                  </div>
-                </div>
-            </div>
+                
+                    
+                    <div class="row  mb-lg-3 mb-1">
+                        <div class="col-lg-6 ">
+                            <div class="form-group">
+                                <label for="go_live" class="form-label">ด้วยข้าพเจ้าต้องเดินทางไปปฏิบัติงานที่</label>
+                                <input class="form-control" type="text" placeholder="สถานที่ที่จะไป"  name="go_live" id="go_live">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-lg-0 py-3">
+                            <div class="form-group">
+                                <label for="along_with" class="form-label">พร้อมด้วย</label>
+                                <input class="form-control" type="text" placeholder="" aria-label="re" name="along_with" id="along_with">
+                            </div>
+                        </div>
+                    </div>
 
-
-        <br>
-          <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="re">ด้วยข้าพเจ้าต้องเดินทางไปปฏิบัติงานที่</label>
-                    <br>
-                    <input class="form-control" type="text" placeholder="สถานที่ที่จะไป" aria-label="re" name="go_live" id="go_live">
+            
+                    <div class="form-group mb-3">
+                        <label for="to_what" class="form-label">เพื่อ</label>
+                        <input class="form-control" type="text" placeholder="จุดประสงค์" aria-label="re" name="to_what" id="to_what">
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="re">พร้อมด้วย</label>
-                    <input class="form-control" type="text" placeholder="" aria-label="re" name="along_with" id="along_with">
-                </div>
-            </div>
-        </div>
-
-        <br>
-        <div class="form-group">
-            <label for="re">เพื่อ</label>
-            <input class="form-control" type="text" placeholder="จุดประสงค์" aria-label="re" name="to_what" id="to_what">
-        </div>
 
 
             <!-- กำหนดวันที่ในการกำหนดงาน -->
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="startDate">จึงขออนุมัติไปปฏิบัติงาน ตั้งแต่วันที่</label>
-                    <input type="date" class="form-control" id="startDate" name="startDate" >
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="endDate">ถึงวันที่</label>
-                    <input type="date" class="form-control" id="endDate" name="endDate">
-                  </div>
-                </div>
-              </div>
             
-            <br>
-            <div class="form-group">
-                <label for="re">ในระหว่างการเดินทางไปปฏิบัติหน้าที่ ข้าพเจ้าพักที่</label>
-                <input class="form-control" type="text" placeholder="สถานที่พักระหว่างปฏิบัติหน้าที่" aria-label="re" name="where_live" id="where_live">
-            </div>
-            
-            <br>
-            <div class="form-group">
-                <label for="re">หมายเลขโทรศัพท์ที่ติดต่อได้</label>
-                <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ที่ติดต่อได้" aria-label="re" name="number_phone" id="number_phone" maxlength="10"  pattern="[0-9]{10}" >
-            </div>
-            
-            <br>
-            <p>ในการเดินทางไปปฏิบัติงานครั้งนี้ ข้าพเจ้าประมาณการใช้จ่ายในการเดินทางไปปฏิบัติงาน ดังนี้</p>
+                <div class="bg-light shadow py-4 px-5 mb-3">
+                    <p>จึงขออนุมัติไปปฏิบัติงาน</p>
+                    <div class="row mb-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="startDate" class="form-label">ตั้งแต่วันที่</label>
+                                <input type="date" class="form-control" id="startDate" name="startDate" >
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-lg-0 pt-3">
+                        <div class="form-group">
+                            <label for="endDate" class="form-label">ถึงวันที่</label>
+                            <input type="date" class="form-control" id="endDate" name="endDate">
+                        </div>
+                        </div>
+                    </div>
+                    
 
-            <div class="container">
+                        <div class="form-group mb-3">
+                            <label for="where_live" class="form-label">ในระหว่างการเดินทางไปปฏิบัติหน้าที่ ข้าพเจ้าพักที่</label>
+                            <input class="form-control" type="text" placeholder="สถานที่พักระหว่างปฏิบัติหน้าที่" aria-label="re" name="where_live" id="where_live">
+                        </div>
+                        
+
+                    <div class="row">
+                        <div class="col-lg-6 form-group">
+                            <label for="number_phone" class="form-label">หมายเลขโทรศัพท์ที่ติดต่อได้</label>
+                            <input type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ที่ติดต่อได้" aria-label="re" name="number_phone" id="number_phone" maxlength="10"  pattern="[0-9]{10}" >
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+            <div class="bg-light shadow py-4 px-5 mb-3">
+                <p>ในการเดินทางไปปฏิบัติงานครั้งนี้ ข้าพเจ้าประมาณการใช้จ่ายในการเดินทางไปปฏิบัติงาน ดังนี้</p>
+
+            
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -101,513 +101,694 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row mb-3">
+                    <div class="col-lg-3">
                         <div class="form-group">
-                            <label for="numberOfDays">วันละ</label>
-                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="Daily_allowance" name="Daily_allowance">
-                            <span class="text-muted">บาท</span>
+                            <label for="numberOfDays" class="form-label">วันละ</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left" type="number" placeholder="อัตรวันละ" id="Daily_allowance" name="daily_allowance">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="numberOfDays">จำนวนวัน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="DailyAllowance_Perday" name="DailyAllowance_Perday">
-                            <span class="text-muted">วัน</span>
+                            <label for="numberOfDays" class="form-label">จำนวนวัน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="DailyAllowance_Perday" name="dailyAllowance_Perday">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">วัน</label>
+                                </div>
+                            
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="numberOfPeople">จำนวนคน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="DailyAllowance_PerPeople" name="DailyAllowance_PerPeople">
-                            <span class="text-muted">คน</span>
+
+                    <div class="col-lg-3 pt-lg-0 pt-3">
+                        <div class="form-group ">
+                            <label for="numberOfPeople" class="form-label">จำนวนคน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="DailyAllowance_PerPeople" name="dailyAllowance_PerPeople">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">คน</label>
+                                </div>
+                            
+                            </div>
+                            
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="totalAmount">เป็นเงิน</label>
-                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="sum_DailyAllowance" readonly name="sum_DailyAllowance">
-                            <span class="text-muted">บาท</span>
+                            <label for="totalAmount" class="form-label">เป็นเงิน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="sum_DailyAllowance" readonly name="sum_DailyAllowance">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
-            <br>
+            
             <!-- ส่วนประข้อ 2  -->
-            <div class="container ">
+            
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
                             <label for="dailyAllowance">2. ค่าเช่าที่พัก</label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
+                <div class="row my-2">
+                    <div class="col-lg-3">
+                        <div class="form-group" >
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Rent_Live" id="Rent_Live" value="ประเภท ก">
-                                <label class="form-check-label" for="Rent">ประเภท ก.</label>
+                                <input class="form-check-input" type="radio" name="rent_Live" id="Rent_Live" value="ประเภท ก">
+                                <label class="form-check-label" for="Rent_Live">ประเภท ก.</label>
                             </div>
                         </div>
                     </div>
                 </div>          
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row mb-3">
+                    <div class="col-lg-3">
                         <div class="form-group">
-                            <label for="numberOfDays">วันละ</label>
-                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="Rent_dailyAllowance" name="Rent_dailyAllowance" >
-                            <span class="text-muted">บาท</span>
+                            <label for="numberOfDays" class="form-label">วันละ</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left rent" type="number" placeholder="อัตราวันละ" id="Rent_dailyAllowance" name="rent_dailyAllowance" >
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="numberOfDays">จำนวนวัน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="Rent_numberOfDays" name="Rent_numberOfDays">
-                            <span class="text-muted">วัน</span>
+                            <label for="numberOfDays" class="form-label">จำนวนวัน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left rent" type="number" placeholder="จำนวนวัน" id="Rent_numberOfDays" name="rent_numberOfDays"></div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">วัน</label>
+                                </div>
+                                
+                            
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="numberOfPeople">จำนวนคน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="Rent_numberOfPeople" name="Rent_numberOfPeople">
-                            <span class="text-muted">คน</span>
+                            <label for="numberOfPeople" class="form-label rent">จำนวนคน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="Rent_numberOfPeople" name="rent_numberOfPeople">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">คน</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="totalAmount">เป็นเงิน</label>
-                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="sum_Rent"  name="sum_Rent" readonly >
-                            <span class="text-muted">บาท</span>
+                            <label for="totalAmount" class="form-label">เป็นเงิน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left text-nowrap rent" type="number" placeholder="รวมเงิน" id="sum_Rent"  name="sum_Rent" readonly >
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row my-2">
+                    <div class="col-lg-6 ">
                         <div class="form-group">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Rent" id="Lamp_Rent" value="ประเภทก">
-                                <label class="form-check-label" for="้select_home">แบบเหมาจ่าย</label>
+                                <input class="form-check-input" type="radio" name="rent_Live" id="Lamp_Rent" value="เหมาจ่าย">
+                                <label class="form-check-label" for="Lamp_Rent">แบบเหมาจ่าย</label>
                             </div>
                         </div>
                     </div>
                 </div>          
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row mb-3">
+                    <div class="col-lg-3">
                         <div class="form-group">
-                            <label for="numberOfDays">วันละ</label>
-                            <input class="form-control text-left" type="number" placeholder="คนละกี่บาท" id="Lump_dailyAllowance" name="Lump_dailyAllowance" value="600" >
-                            <span class="text-muted">บาท</span>
+                            <label for="numberOfDays" class="form-label">วันละ</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left lamp" type="number" placeholder="คนละกี่บาท" id="Lump_dailyAllowance" name="lump_dailyAllowance" value="600" >
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="numberOfDays">จำนวนวัน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนวัน" id="Lump_numberOfDays" name="Lump_numberOfDays">
-                            <span class="text-muted">วัน</span>
+                            <label for="numberOfDays" class="form-label">จำนวนวัน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left lamp" type="number" placeholder="จำนวนวัน" id="Lump_numberOfDays" name="lump_numberOfDays">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">วัน</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="numberOfPeople">จำนวนคน</label>
-                            <input class="form-control text-left" type="number" placeholder="จำนวนคน" id="Lump_numberOfPeople" name="Lump_numberOfPeople">
-                            <span class="text-muted">คน</span>
+                            <label for="numberOfPeople" class="form-label ">จำนวนคน</label>
+                            <div class="row">
+                                <div class="col"> 
+                                    <input class="form-control text-left lamp" type="number" placeholder="จำนวนคน" id="Lump_numberOfPeople" name="lump_numberOfPeople">
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">คน</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3 pt-lg-0 pt-3">
                         <div class="form-group">
-                            <label for="totalAmount">เป็นเงิน</label>
-                            <input class="form-control text-left text-nowrap" type="number" placeholder="รวมเงิน" id="Lump_totalAmount" name="Lump_totalAmount" readonly>
-                            <span class="text-muted">บาท</span>
+                            <label for="totalAmount" class="form-label">เป็นเงิน</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control text-left text-nowrap lamp" type="number" placeholder="รวมเงิน" id="Lump_totalAmount" name="lump_totalAmount" readonly>
+                                </div>
+                                <div class="col-auto align-self-end">
+                                    <label class="text-muted">บาท</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>      
-            </div>
-
-
-
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg">
-                        <div class="form-group">
-                            <label for="">3. ค่าพาหนะเดินทาง</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-4">
-                    <div class="col-lg-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_car" id="car" value="ค่ารถไฟ, รถทัวร์, รถตู้">
-                            <label class="form-check-label" for="select_car">ค่ารถไฟ, รถทัวร์, รถตู้</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="จำนวนคน" id="car_numberOfPeople" name="car_numberOfPeople">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">คน</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="ราคาต่อคน" id="car_toPeople" name="car_toPeople">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">บาท</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="">รวม</label>
-                                    <input class="form-control" id="car_sum" name="car_sum" type="number" placeholder="บาท" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-4">
-                    <div class="col-lg-4">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_car" id="plane" value="ค่าเครื่องบิน">
-                            <label class="form-check-label" for="select_car">ค่าเครื่องบิน</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="จำนวนคน" id="plane_numberOfPeople" name="plane_numberOfPeople">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">คน</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="ราคาต่อคน" id="plane_priceOfPeople" name="plane_priceOfPeople">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">บาท</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="">รวม</label>
-                                    <input class="form-control" type="number" placeholder="บาท" id="Sum_plane" name="Sum_plane" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-4">
-                    <div class="col-lg">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_car" id="car_person" value="ชดเชยนำมันรถยนต์ส่วนตัว">
-                            <label class="form-check-label" for="select_car">ชดเชยนำมันรถยนต์ส่วนตัว</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="ระยะทาง" id="person_distance" name="person_distance">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">กิโลเมตร</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="ราคาต่อ กม." id="person_numberOfBath" name="person_numberOfBath" value="4">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">บาท</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" type="number" placeholder="จำนวนเที่ยว" id="person_numberOfRange" name="person_numberOfRange">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">เที่ยว</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="">โชว์เงิน</label>
-                                    <input class="form-control" type="number" id="person_sum" name="person_sum" placeholder="บาท" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>     
-            <br>
             
-                <!-- ตัวเลือก 4  -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg">
-                        <div class="form-group">
-                            <label for="">4. ค่ารถรับจ้างและค่ารถประจำทาง</label>
-                        </div>
-                    </div>
-                </div>                    
-                <div class="row pt-2">            
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" type="number" placeholder="จำนวนคน" id="bus_people" name="bus_people">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">คน</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" type="number" placeholder="คนละกี่บาท" id="bus_pricePeople" name="bus_pricePeople">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">บาท</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="">รวม</label>
-                                    <input class="form-control" type="number" id="sum_bus" name="sum_bus" placeholder="บาท" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <br>
-
-            <!-- ค่าลงทะเบียน -->
-            <div class="container">
                 <div class="row ">
-                    <div class="col-lg-auto">
+                    <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="dailyAllowance">5. ค่าลงทะเบียน</label>
+                            <label for="dailyAllowance">3. ค่าพาหนะเดินทาง</label>
                         </div>
                     </div>
                 </div>
-                <div class="row pt-2">
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" type="number" placeholder="จำนวนคน" id="regis_people"  name="regis_people">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">คน</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" type="number" placeholder="คนละกี่บาท" id="numberOfpricePeople" name="numberOfpricePeople">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">บาท</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="">รวม</label>
-                                    <input class="form-control" type="number" placeholder="บาท" id="sum_regis" name="sum_regis" readonly >
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <!-- 6.น้ำมันเชื้อเพลิง -->
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-auto">
-                        <div class="form-group">
-                          <label for="dailyAllowance">6. ค่าน้ำมันเชื้อเพลิง</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">    
-                                    <div class="input-group pt-2">
-                                        <label class="input-group-text" for="">โชว์เงิน</label>
-                                        <input class="form-control" type="text" placeholder="บาท">
-                                    </div>
-                            </div>
-                        </div>
-                    </div>     
-                </div>
-            </div>
-
-            <!-- 7.เงินช่วยเหลือพนักงานขับรถ -->
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-auto">
-                        <div class="form-group">
-                            <label for="dailyAllowance">7. เงินช่วยเหลือพนักงานขับรถ</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">    
-                                    <div class="input-group pt-2">
-                                        <label class="input-group-text" for="">โชว์เงิน</label>
-                                        <input class="form-control" type="text" placeholder="บาท">
-                                    </div>
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-
-            <br>
-            <!-- สามารถเพิ่มกล่องได้ -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-auto">
-                        <div class="form-group">
-                            <label for="dailyAllowance">8. อื่น ๆ </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-auto pt-2">
-                        <div class="form-groups ">
-                            <input class="form-control text-left " type="text" placeholder="เพิ่มตัวเลือกในช่องนี้" id="input-0">
-                        </div>
-                    </div>
                 
-                </div>
-            </div>
+                <div class="row my-2">
+                    <div class="col-lg-6">
+                        <div class="form-group" >
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="select_car" id="car" value="ค่ารถไฟ, รถทัวร์, รถตู้">
+                                <label class="form-check-label" for="car">ค่ารถไฟ, รถทัวร์, รถตู้</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                    
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                
+                                <label for="car_numberOfPeople" class="form-label">จำนวน</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control car" type="number" placeholder="จำนวนคน" id="car_numberOfPeople" name="car_numberOfPeople">
+                                        </div>
+                                        <div class="col-auto align-self-end">
+                                            <label class="text-muted" >คน</label>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="col-lg-4 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <label for="" class="form-label">คนละ</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control car" type="number" placeholder="ราคาต่อคน" id="car_toPeople" name="car_toPeople">
+                                    </div>
+                                    <div class="col-auto align-self-end">
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>     
+                            </div>
+                        </div>
+                        <div class="col-lg-4 align-self-end p-lg-0 pt-3">
+                            <div class="form-group">
+                                <label class="" for="">เป็นเงิน</label>
+                                <div class="row">
+                                    <div class="col"><input class="form-control car" id="car_sum" name="car_sum" type="number" placeholder="บาท" readonly></div>
+                                    <div class="col-auto align-self-end">
+                                        <label class="text-muted" for="">บาท</label>
+                                    </div>
+                                </div>       
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="container row-cols-lg-6 d-flex justify-content-center">
-                <div class="border-dark border container mx-auto">
-                    <div class="form-group">
-                        <p>ในการเดินทางไปปฏิบัติงานครั้งนี้ ขอเบิกค่าใช้จ่ายจาก</p>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_home" id="select_pay" value="เดินทางไปปฏิบัติงาน">
-                            <label class="form-check-label" for="select_pay">ค่าเดินทางไปปฏิบัติงาน</label>
+                    <div class="row my-2">
+                        <div class="col-lg-6">
+                            <div class="form-group" >
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="select_car" id="plane" value="ค่าเครื่องบิน">
+                                <label class="form-check-label" for="plane">ค่าเครื่องบิน</label>
+                
+                                
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_home" id="select_development" value="งานพัฒนาบุคลากร">
-                            <label class="form-check-label" for="select_development">งานพัฒนาบุคลากร</label>
+                    </div> 
+
+                    <div class="row ">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                
+                                <label for="plane_numberOfPeople" class="form-label">จำนวน</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control" type="number" placeholder="จำนวนคน" id="plane_numberOfPeople" name="car_numberOfPeople">
+                                        </div>
+                                        <div class="col-auto align-self-end">
+                                            <label class="text-muted" >คน</label>
+                                        </div>
+                                    </div>
+                                
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_home" id="select_nothing" value="ไม่เบิกค่าใช้จ่าย">
-                            <label class="form-check-label" for="select_nothing">ไม่เบิกค่าใช้จ่าย</label>
+                    
+                        <div class="col-lg-3 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <label for="plane_priceOfPeople" class="form-label">คนละ</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="จำนวนคน" id="plane_priceOfPeople" name="plane_numberOfPeople">
+                                    </div>
+                                    <div class="col-auto align-self-end">
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>     
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="select_home" id="select_other" value="อื่น ๆ">
-                            <label class="form-check-label" for="select_other">อื่น ๆ</label>
+                        <div class="col-lg-4 align-self-end p-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="" for="">เป็นเงิน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="บาท" id="Sum_plane" name="sum_plane" readonly>
+                                    </div>
+                                    <div class="col-auto align-self-end">
+                                        <label class="text-muted" for="">บาท</label>
+                                    </div>
+                                </div>       
+                            </div>
                         </div>
-                        <div class="form-group" id="other-input-container" >
-                            <input class="form-control text-left" type="text" placeholder="โปรดระบุ" id="other" disabled  >
+                    </div>
+                    
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="select_car2" id="car_person" value="ชดเชยนำมันรถยนต์ส่วนตัว">
+                            <label class="form-check-label" for="car_person">ชดเชยน้ำมันรถยนต์ส่วนตัว</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="person_distance">จำนวน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="ระยะทาง" id="person_distance" name="person_distance">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">กิโลเมตร</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="form-group ">
+                                <div class="row">
+                                    <label class="form-label" for="person_numberOfBath">กิโลเมตรละ</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="ราคาต่อ กม." id="person_numberOfBath" name="person_numberOfBath" value="4">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="person_numberOfRange">จำนวน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="จำนวนเที่ยว" id="person_numberOfRange" name="person_numberOfRange">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">เที่ยว</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="person_sum">เป็นเงิน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" id="person_sum" name="person_sum" placeholder="บาท" readonly>
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
+         
                     </div>
                 </div>
-                <div>
-                    <div>
-                    <p>ลงชื่อ.............................................</p>
+                
+                
+            
+                <!-- ตัวเลือก 4  -->
+
+
+                <div class="row pt-4">
+                    <div class="col-lg-6">  
+                        <p>4. ค่ารถรับจ้างและค่ารถประจำทาง</p>
                     </div>
-                    <div>
-                        <select class="form-select" id="List_AJ" name="List_AJ" required>
-                            <option value="รองศาสตราจารย์ ดร.พงศ์ศักดิ์ เหล่าดี">รองศาสตราจารย์ ดร.พงศ์ศักดิ์ เหล่าดี</option>
-                            <option value="รองศาสตราจารย์ ดร.ภัททิรา พงษ์ทิพย์พาที">รองศาสตราจารย์ ดร.ภัททิรา พงษ์ทิพย์พาที</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.ปฏิมา เพิ่มพูนพัฒนา">ผู้ช่วยศาสตราจารย์ ดร.ปฏิมา เพิ่มพูนพัฒนา</option>
-                            <option value="ศาสตราจารย์เกียรติคุณ บุญเสริม วิทยชำนาญกุล">ศาสตราจารย์เกียรติคุณ บุญเสริม วิทยชำนาญกุล</option>
-                            <option value="รองศาสตราจารย์ ดร.ดวงแขฑิตา  กาญจนโสภา">รองศาสตราจารย์ ดร.ดวงแขฑิตา  กาญจนโสภา</option>
-                            <option value="Assoc.Prof.Dr.Karthikeyan Venkatachalam">Assoc.Prof.Dr.Karthikeyan Venkatachalam</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.จรัสลักษณ์  เพชรวัง">ผู้ช่วยศาสตราจารย์ ดร.จรัสลักษณ์  เพชรวัง</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.สุวัฒน์  จุฑาพฤทธิ์">ผู้ช่วยศาสตราจารย์ ดร.สุวัฒน์  จุฑาพฤทธิ์</option>
-                            <option value="รองศาสตราจารย์ ดร.โอภาส  พิมพา">รองศาสตราจารย์ ดร.โอภาส  พิมพา</option>
-                            <option value="รองศาสตราจารย์ ดร.สมหวัง  เล็กจริง">รองศาสตราจารย์ ดร.สมหวัง  เล็กจริง</option>
-                            <option value="รองศาสตราจารย์ ดร.ธีรศักดิ์  ปั้นวิชัย">รองศาสตราจารย์ ดร.ธีรศักดิ์  ปั้นวิชัย</option>
-                            <option value="รองศาสตราจารย์ ดร.ปาริชาต  นิลวิเชียร">รองศาสตราจารย์ ดร.ปาริชาต  นิลวิเชียร</option>
-                            <option value="รองศาสตราจารย์ ดร.วิกันดา  รัตนพันธ์">รองศาสตราจารย์ ดร.วิกันดา  รัตนพันธ์</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.กานดา  ค้ำชู">ผู้ช่วยศาสตราจารย์ ดร.กานดา  ค้ำชู</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.จรีพร  เรืองศรี">ผู้ช่วยศาสตราจารย์ ดร.จรีพร  เรืองศรี</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.ศิรุษา  กฤษณะพันธุ์">ผู้ช่วยศาสตราจารย์ ดร.ศิรุษา  กฤษณะพันธุ์</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา">ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา">ผู้ช่วยศาสตราจารย์ ดร.เจษฎา  รัตนวุฒิ</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.ธีร  ศรีสวัสดิ์">ผู้ช่วยศาสตราจารย์ ดร.ธีร  ศรีสวัสดิ์  </option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.บดี  คำสีเขียว">ผู้ช่วยศาสตราจารย์ ดร.บดี  คำสีเขียว</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.สุรพล  ฐิติธนากุล">ผู้ช่วยศาสตราจารย์ ดร.สุรพล  ฐิติธนากุล</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.อุมาพร  แพทย์ศาสตร์">ผู้ช่วยศาสตราจารย์ ดร.อุมาพร  แพทย์ศาสตร์</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.นิตยา  อัมรัตน์">ผู้ช่วยศาสตราจารย์ ดร.นิตยา  อัมรัตน์</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.เยาวพรรณ  สนธิกุล">ผู้ช่วยศาสตราจารย์ ดร.เยาวพรรณ  สนธิกุล</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.ชัชวาล โชติมากร">ผู้ช่วยศาสตราจารย์ ดร.ชัชวาล โชติมากร</option>
-                            <option value="ผู้ช่วยศาสตราจารย์ ดร.ปารมี หนูนิ่ม">ผู้ช่วยศาสตราจารย์ ดร.ปารมี หนูนิ่ม</option>
-                            <option value="ดร.ดวงรัตน์ ชูเกิด">ดร.ดวงรัตน์ ชูเกิด</option>
-                            <option value="ดร.ดาริกา  คงฤทธิ์">ดร.ดาริกา  คงฤทธิ์</option>
-                            <option value=">ดร.สรายุทธ  อ่อนสนิท">ดร.สรายุทธ  อ่อนสนิท</option>
-                            <option value="ดร.วิบูลย์  ป้องกันภัย">ดร.วิบูลย์  ป้องกันภัย</option>
-                            <option value="ดร.รพีวรรณ  โสวรรณปรีชา">ดร.รพีวรรณ  โสวรรณปรีชา</option>
-                            <option value="อาจารย์ปิยรัตน์  นาควิโรจน์">อาจารย์ปิยรัตน์  นาควิโรจน์</option>
-                            <option value="นางสาวอมรทิพย์  นิลสม">นางสาวอมรทิพย์  นิลสม</option>
-                            <option value="นางสาวกาญจนา  ทองบัว">นางสาวกาญจนา  ทองบัว</option>
-                            <option value="นางสาวดวงเดือน  ริยาพันธ์">นางสาวดวงเดือน  ริยาพันธ์</option>
-                            <option value="นายทนงศักดิ์ แก้วประดิษ">นายทนงศักดิ์ แก้วประดิษฐ</option>
-                            <option value="นายภานุพงศ์ ภิญโญศิริกุล">นายภานุพงศ์ ภิญโญศิริกุล</option>
-                            <option value="นางสาวสุวนันท์ หนูสง">นางสาวสุวนันท์ หนูสง</option>
-                            <option value="นายวงศกร ขวัญดี">นายวงศกร ขวัญดี</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="bus_people">จำนวน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="จำนวนคน" id="bus_people" name="bus_people">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">คน</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="person_numberOfBath">คนละ</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="ราคาต่อคน" id="bus_pricePeople" name="bus_pricePeople">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="col-lg-4 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="sum_bus">เป็นเงิน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" id="sum_bus" name="sum_bus" placeholder="บาท" readonly>
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+         
                     </div>
-                    <div>ตำแหน่ง
-                        <select class="form-select" name="position_AJ" id="position_AJ">
-                        <option value="ศาสตราจารย์">ศาสตราจารย์</option>
-                        <option value="รองศาสตราจารย์">รองศาสตราจารย์</option>
-                        <option value="ผู้ช่วยศาสตราจารย์">ผู้ช่วยศาสตราจารย์</option>
-                        <option value="อาจารย์">อาจารย์</option>
-                        <option value="นักวิชาการอุดมศึกษา">นักวิชาการอุดมศึกษา</option>
-                        <option value="นักวิชาการศึกษา">นักวิชาการศึกษา</option>
-                        <option value="นักวิชาการเกษตร">นักวิชาการเกษตร</option>
-                        <option value="นักวิชาการพัสดุ">นักวิชาการพัสดุ</option>
-                        <option value="เจ้าหน้าที่บริหารงานทั่วไป">เจ้าหน้าที่บริหารงานทั่วไป</option>
-                    </select>
                 </div>
+
+                <div class="row pt-4">
+                    <div class="col-lg-6">  
+                        <p>5. ค่าลงทะเบียน</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="regis_people">จำนวน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="จำนวนคน" id="regis_people"  name="regis_people">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">คน</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="numberOfpricePeople">คนละ</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="คนละกี่บาท" id="numberOfpricePeople" name="numberOfpricePeople">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="col-lg-4 pt-lg-0 pt-3">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="form-label" for="sum_regis">เป็นเงิน</label>
+                                    <div class="col">
+                                        <input class="form-control" type="number" placeholder="บาท" id="sum_regis" name="sum_regis" readonly >
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+         
+                    </div>
+                </div>
+
+
+        
+
+
+                <div class="row pt-4 ">
+                    <div class="col-lg-7 p-lg-0 pt-3">  
+                        <p>6. ค่าน้ำมันเชื้อเพลิง</p>
+                    </div>
+                    
+
+                    <div class="col-lg-5">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-auto align-self-end" >
+                                        <label class="form-label" for="sum_regis">เป็นเงิน</label>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <input class="form-control" type="text" placeholder="บาท">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                        
+         
+                    
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-lg-7">  
+                        <p>7. เงินช่วยเหลือพนักงานขับรถ</p>
+                    </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-auto align-self-end" >
+                                        <label class="form-label" for="sum_regis">เป็นเงิน</label>
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" type="text" placeholder="บาท">
+                                    </div>
+                                    <div class="col-auto align-self-end" >
+                                        <label class="text-muted">บาท</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+         
+                   
+                </div>
+            
+            <!-- สามารถเพิ่มกล่องได้ -->
+            
+                <div class="row mb-3 pt-4">
+                    <div class="col-lg-7 ">
+                        <div class="form-group">
+                            <label for="dailyAllowance">8. อื่น ๆ </label>
+                            <button type="button" class="btn btn-success btn-sm" id="createInputsButton">เพิ่ม</button> 
+                        </div>
+                    </div>
+                    <div class="col-lg-5 p-lg-0 pt-3">
+                        <div class="row">
+                            <div class="col-auto align-self-end d-lg-inline d-block"  >
+                                <label class="form-label" for="otherTotal">เป็นเงิน</label>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="text" id="otherTotal" placeholder="บาท" readonly>
+                            </div>
+                            <div class="col-auto align-self-end" >
+                                <label class="text-muted">บาท</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-lg-6 pt-2">
+                        <div class="form-groups" id="otherInput">
+                            
+                        </div>
+                    </div>
                 
                 </div>
             </div>
             
 
-            <br>
-            <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+            <div class="bg-light shadow py-4 px-5 mb-3">
+                <div class="row mb-4">
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <div class="container mx-auto">
+                            <div class="form-group">
+                                <p>ในการเดินทางไปปฏิบัติงานครั้งนี้ ขอเบิกค่าใช้จ่ายจาก</p>
+                                <div class="row">
+                                    <div class="col-lg-6 form-check ">
+                                        <input class="form-check-input" type="radio" name="select_home" id="select_pay" value="เดินทางไปปฏิบัติงาน">
+                                        <label class="form-check-label" for="select_pay">ค่าเดินทางไปปฏิบัติงาน</label>
+                                    </div>
+                                    <div class="col-lg-6 form-check ">
+                                        <input class="form-check-input" type="radio" name="select_home" id="select_development" value="งานพัฒนาบุคลากร">
+                                        <label class="form-check-label" for="select_development">งานพัฒนาบุคลากร</label>
+                                    </div>
+                                    <div class="col-lg-6 form-check ">
+                                        <input class="form-check-input" type="radio" name="select_home" id="select_nothing" value="ไม่เบิกค่าใช้จ่าย">
+                                        <label class="form-check-label" for="select_nothing">ไม่เบิกค่าใช้จ่าย</label>
+                                    </div>
+                                    <div class="col-lg-6 form-check ">
+                                        <input class="form-check-input" type="radio" name="select_home" id="select_other" value="อื่น ๆ">
+                                        <label class="form-check-label" for="select_other">อื่น ๆ</label>
+                                    </div>
+                                    <div class="col-lg-6 form-group" id="other-input-container" >
+                                        <input class="form-control text-left" type="text" placeholder="โปรดระบุ" id="other" disabled  >
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-lg-6 p-lg-0 pt-3"> 
+                            <div class="mb-3">
+                                <label for="form-label " for="List_AJ">ลงชื่อ</label>
+                                <select class="form-select" id="List_AJ" name="list_AJ" required>
+                                    <option value="รองศาสตราจารย์ ดร.พงศ์ศักดิ์ เหล่าดี">รองศาสตราจารย์ ดร.พงศ์ศักดิ์ เหล่าดี</option>
+                                    <option value="รองศาสตราจารย์ ดร.ภัททิรา พงษ์ทิพย์พาที">รองศาสตราจารย์ ดร.ภัททิรา พงษ์ทิพย์พาที</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.ปฏิมา เพิ่มพูนพัฒนา">ผู้ช่วยศาสตราจารย์ ดร.ปฏิมา เพิ่มพูนพัฒนา</option>
+                                    <option value="ศาสตราจารย์เกียรติคุณ บุญเสริม วิทยชำนาญกุล">ศาสตราจารย์เกียรติคุณ บุญเสริม วิทยชำนาญกุล</option>
+                                    <option value="รองศาสตราจารย์ ดร.ดวงแขฑิตา  กาญจนโสภา">รองศาสตราจารย์ ดร.ดวงแขฑิตา  กาญจนโสภา</option>
+                                    <option value="Assoc.Prof.Dr.Karthikeyan Venkatachalam">Assoc.Prof.Dr.Karthikeyan Venkatachalam</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.จรัสลักษณ์  เพชรวัง">ผู้ช่วยศาสตราจารย์ ดร.จรัสลักษณ์  เพชรวัง</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.สุวัฒน์  จุฑาพฤทธิ์">ผู้ช่วยศาสตราจารย์ ดร.สุวัฒน์  จุฑาพฤทธิ์</option>
+                                    <option value="รองศาสตราจารย์ ดร.โอภาส  พิมพา">รองศาสตราจารย์ ดร.โอภาส  พิมพา</option>
+                                    <option value="รองศาสตราจารย์ ดร.สมหวัง  เล็กจริง">รองศาสตราจารย์ ดร.สมหวัง  เล็กจริง</option>
+                                    <option value="รองศาสตราจารย์ ดร.ธีรศักดิ์  ปั้นวิชัย">รองศาสตราจารย์ ดร.ธีรศักดิ์  ปั้นวิชัย</option>
+                                    <option value="รองศาสตราจารย์ ดร.ปาริชาต  นิลวิเชียร">รองศาสตราจารย์ ดร.ปาริชาต  นิลวิเชียร</option>
+                                    <option value="รองศาสตราจารย์ ดร.วิกันดา  รัตนพันธ์">รองศาสตราจารย์ ดร.วิกันดา  รัตนพันธ์</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.กานดา  ค้ำชู">ผู้ช่วยศาสตราจารย์ ดร.กานดา  ค้ำชู</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.จรีพร  เรืองศรี">ผู้ช่วยศาสตราจารย์ ดร.จรีพร  เรืองศรี</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.ศิรุษา  กฤษณะพันธุ์">ผู้ช่วยศาสตราจารย์ ดร.ศิรุษา  กฤษณะพันธุ์</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา">ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.เบญจมาภรณ์  พิมพา">ผู้ช่วยศาสตราจารย์ ดร.เจษฎา  รัตนวุฒิ</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.ธีร  ศรีสวัสดิ์">ผู้ช่วยศาสตราจารย์ ดร.ธีร  ศรีสวัสดิ์  </option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.บดี  คำสีเขียว">ผู้ช่วยศาสตราจารย์ ดร.บดี  คำสีเขียว</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.สุรพล  ฐิติธนากุล">ผู้ช่วยศาสตราจารย์ ดร.สุรพล  ฐิติธนากุล</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.อุมาพร  แพทย์ศาสตร์">ผู้ช่วยศาสตราจารย์ ดร.อุมาพร  แพทย์ศาสตร์</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.นิตยา  อัมรัตน์">ผู้ช่วยศาสตราจารย์ ดร.นิตยา  อัมรัตน์</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.เยาวพรรณ  สนธิกุล">ผู้ช่วยศาสตราจารย์ ดร.เยาวพรรณ  สนธิกุล</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.ชัชวาล โชติมากร">ผู้ช่วยศาสตราจารย์ ดร.ชัชวาล โชติมากร</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์ ดร.ปารมี หนูนิ่ม">ผู้ช่วยศาสตราจารย์ ดร.ปารมี หนูนิ่ม</option>
+                                    <option value="ดร.ดวงรัตน์ ชูเกิด">ดร.ดวงรัตน์ ชูเกิด</option>
+                                    <option value="ดร.ดาริกา  คงฤทธิ์">ดร.ดาริกา  คงฤทธิ์</option>
+                                    <option value=">ดร.สรายุทธ  อ่อนสนิท">ดร.สรายุทธ  อ่อนสนิท</option>
+                                    <option value="ดร.วิบูลย์  ป้องกันภัย">ดร.วิบูลย์  ป้องกันภัย</option>
+                                    <option value="ดร.รพีวรรณ  โสวรรณปรีชา">ดร.รพีวรรณ  โสวรรณปรีชา</option>
+                                    <option value="อาจารย์ปิยรัตน์  นาควิโรจน์">อาจารย์ปิยรัตน์  นาควิโรจน์</option>
+                                    <option value="นางสาวอมรทิพย์  นิลสม">นางสาวอมรทิพย์  นิลสม</option>
+                                    <option value="นางสาวกาญจนา  ทองบัว">นางสาวกาญจนา  ทองบัว</option>
+                                    <option value="นางสาวดวงเดือน  ริยาพันธ์">นางสาวดวงเดือน  ริยาพันธ์</option>
+                                    <option value="นายทนงศักดิ์ แก้วประดิษ">นายทนงศักดิ์ แก้วประดิษฐ</option>
+                                    <option value="นายภานุพงศ์ ภิญโญศิริกุล">นายภานุพงศ์ ภิญโญศิริกุล</option>
+                                    <option value="นางสาวสุวนันท์ หนูสง">นางสาวสุวนันท์ หนูสง</option>
+                                    <option value="นายวงศกร ขวัญดี">นายวงศกร ขวัญดี</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="form-label" for="position_AJ">ตำแหน่ง</label>
+                                <select class="form-select" name="position_AJ" id="position_AJ">
+                                <option value="ศาสตราจารย์">ศาสตราจารย์</option>
+                                <option value="รองศาสตราจารย์">รองศาสตราจารย์</option>
+                                <option value="ผู้ช่วยศาสตราจารย์">ผู้ช่วยศาสตราจารย์</option>
+                                <option value="อาจารย์">อาจารย์</option>
+                                <option value="นักวิชาการอุดมศึกษา">นักวิชาการอุดมศึกษา</option>
+                                <option value="นักวิชาการศึกษา">นักวิชาการศึกษา</option>
+                                <option value="นักวิชาการเกษตร">นักวิชาการเกษตร</option>
+                                <option value="นักวิชาการพัสดุ">นักวิชาการพัสดุ</option>
+                                <option value="เจ้าหน้าที่บริหารงานทั่วไป">เจ้าหน้าที่บริหารงานทั่วไป</option>
+                            </select>
+                        </div>
+                        
+                        </div>
+                    
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>
             <input class="btn btn-secondary" type="reset" value="รีเซ็ต">
             
         </form>

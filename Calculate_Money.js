@@ -117,6 +117,53 @@ function calculate_Person() {
     resultPerson.value = personResult;
  
 }
+function handleRadioChange() {
+    var radioButtons = document.getElementsByName('rent_Live');
+    for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].addEventListener('change', function() {
+            var selectedValue = this.value;
+
+            var lampInputs = document.getElementsByClassName('lamp');
+            var rentInputs = document.getElementsByClassName('rent');
+
+            for (var j = 0; j < lampInputs.length; j++) {
+                lampInputs[j].disabled = selectedValue === 'ประเภท ก';
+            }
+
+            for (var k = 0; k < rentInputs.length; k++) {
+                rentInputs[k].disabled = selectedValue === 'เหมาจ่าย';
+            }
+        });
+    }
+}
+
+handleRadioChange();
+
+const group1Radios = document.querySelectorAll('input[name="select_car"]');
+const group2Radio = document.querySelector('input[name="select_car2"]');
+var carInputs = document.getElementsByClassName('car');
+var planeInputs = document.getElementsByClassName('plane');
+var pscarInputs = document.getElementsByClassName('pscar');
+group2Radio.addEventListener('change', function() {
+    if (this.checked) {
+      group1Radios.forEach(radio => (radio.checked = false));
+    }
+    var selectedValue = this.value;
+    
+  });
+  
+  group1Radios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        // Uncheck group2 radio
+        group2Radio.checked = false;
+      }
+      var selectedValue = this.value;
+      alert(selectedValue);
+    });
+  });
+
+
 
     distancePerson.addEventListener('input',calculate_Person);
     bathPerson.addEventListener('input',calculate_Person);
@@ -154,12 +201,84 @@ var resultRegis = document.getElementById('sum_regis');
 function calculate_Regis(){
     var regis_people = parseFloat(peopleRegis.value) || 0 ;
     var numberOfpricePeople = parseFloat(pricePeople.value) || 0 ;
-    regisResult = regis_people * numberOfpricePeople;
+    //var resultRegis = ;
 
-    resultRegis.value = resultRegis;
+    resultRegis.value = regis_people * numberOfpricePeople;
 }
 
     peopleRegis.addEventListener('input',calculate_Regis);
     pricePeople.addEventListener('input',calculate_Regis);
 
     calculate_Regis();
+
+      document.getElementById('createInputsButton').addEventListener('click', createBothInputs);
+
+const inputIds = [];
+function createBothInputs(event) {
+    event.preventDefault();
+    const inputContainer = document.getElementById('otherInput');
+
+    const newInputGroup = document.createElement('div');
+    newInputGroup.className = 'input-group mb-3 me';
+
+    const newOtherInput = document.createElement('input');
+    const otherInputId = 'otherInput_' + inputIds.length;
+    newOtherInput.id = otherInputId;
+    newOtherInput.type = 'text';
+    newOtherInput.className = 'form-control me-2';
+    newOtherInput.placeholder = 'อื่น';
+
+    const newOtherBahtInput = document.createElement('input');
+    const otherBahtInputId = 'otherBahtInput_' + inputIds.length;
+    newOtherBahtInput.id = otherBahtInputId;
+    newOtherBahtInput.type = 'text';
+    newOtherBahtInput.className = 'form-control';
+    newOtherBahtInput.placeholder = 'บาท';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'ลบ';
+    deleteButton.className = 'btn btn-danger';
+    deleteButton.addEventListener('click', function () {
+        newInputGroup.remove();
+        const index = inputIds.indexOf(otherBahtInputId);
+        if (index !== -1) {
+            inputIds.splice(index, 1);
+        }
+        calculateTotal();
+    });
+
+    newInputGroup.appendChild(newOtherInput);
+    newInputGroup.appendChild(newOtherBahtInput);
+    newInputGroup.appendChild(deleteButton);
+    inputContainer.appendChild(newInputGroup);
+
+    inputIds.push(otherBahtInputId);
+
+    // เชื่อมต่อกับการคำนวณทันทีเมื่อผู้ใช้ป้อนข้อมูล
+    let timeout;
+    newOtherBahtInput.addEventListener('input', function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            calculateTotal();
+            
+        }, 1500);
+       
+    });
+
+    const otherTotal = document.getElementById("otherTotal");
+
+    function calculateTotal() {
+        let totalBahtInputValue = 0;
+        for (const inputId of inputIds) {
+            const otherBahtInput = document.getElementById(inputId);
+            if (otherBahtInput) {
+                const inputValue = parseFloat(otherBahtInput.value);
+                if (!isNaN(inputValue)) {
+                    totalBahtInputValue += inputValue;
+                    otherTotal.value = totalBahtInputValue;
+                }
+            }
+        }
+        console.log('ค่ารวมจาก input fields:', totalBahtInputValue);
+    }
+}

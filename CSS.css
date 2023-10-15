@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,100&display=swap");
 .btn-group-xs > .btn,
 .btn-xs {
   padding: 0.25rem 0.4rem;
@@ -11,20 +11,37 @@ textarea {
 }
 
 .bg-gray {
-  
-  background-color: #FAFAFC;
+  background-color: #F1F4F9;
 }
-.card{
-  border: 0px solid rgba(0,0,0,.125);
+.card {
+  border: 0px solid rgba(0, 0, 0, 0.125);
 }
-body{
-  font-family: 'Kanit', sans-serif !important;
+body {
+  font-family: "Kanit", sans-serif !important;
 }
 
-.fw-light{
+.fw-light {
   color: #6d8297cc;
 }
 
-.text-yellow{
+.text-yellow {
   color: #ff6d1c;
 }
+
+.container-width {
+  max-width: 80%;
+}
+@media (max-width: 768px) {
+  .container-width {
+    max-width: 100%;
+  }
+}
+
+.form-control ,.form-select{
+  border: 0;
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.075) !important;
+}
+input:focus {
+  outline: none !important;
+} 
+
